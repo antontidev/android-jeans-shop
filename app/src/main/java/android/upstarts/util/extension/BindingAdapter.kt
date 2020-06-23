@@ -26,7 +26,7 @@ fun ImageView.bindImage(imgUrl: String?) {
 }
 
 private fun roundDouble(num: Double): Any {
-    return when (Math.abs(num) % 1.0 > 1e-25) {
+    return when (Math.abs(num) % 1.0 > 1e-10) {
         false -> num.roundToInt()
         else -> num
     }

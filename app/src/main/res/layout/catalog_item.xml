@@ -7,10 +7,6 @@
         <variable
             name="model"
             type="android.upstarts.domain.model.JeansModel" />
-
-        <variable
-            name="viewModel"
-            type="android.upstarts.viewmodel.CatalogViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -74,6 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:button="@drawable/mybutton"
+            android:checked="@={}"
             app:layout_constraintBottom_toBottomOf="@id/productPrice"
             app:layout_constraintEnd_toEndOf="@id/productName"
             app:layout_constraintTop_toTopOf="@id/productPrice"/>

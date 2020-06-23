@@ -2,21 +2,16 @@ package android.upstarts.ui
 
 import android.os.Bundle
 import android.upstarts.App
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.upstarts.R
-import android.upstarts.domain.interactors.GetJeansUseCase
 import android.upstarts.ui.base.BaseFragment
 import android.upstarts.util.adapter.CatalogAdapter
 import android.upstarts.viewmodel.CatalogViewModel
-import android.upstarts.viewmodel.CatalogViewModel_Factory
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.lifecycle.Observer
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import kotlinx.android.synthetic.main.fragment_catalog.*
 import kotlinx.android.synthetic.main.fragment_catalog.view.*
 import javax.inject.Inject
 
@@ -38,9 +33,11 @@ class CatalogFragment : BaseFragment() {
 
         val view = inflater.inflate(R.layout.fragment_catalog, container, false)
 
-        adapter = CatalogAdapter {
+        adapter = CatalogAdapter({
             navigateToDetail(it)
-        }
+        }, {
+
+        })
 
         view.catalogRv.adapter = adapter
 

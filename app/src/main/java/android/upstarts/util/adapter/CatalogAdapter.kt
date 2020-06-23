@@ -9,7 +9,8 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 
 class CatalogAdapter(
-    private val onProductClick: (productId: Long) -> Unit
+    private val onProductClick: (productId: Long) -> Unit,
+    private val onFavoriteClick: (productId: Long) -> Unit
 ) : ListAdapter<JeansModel, CatalogAdapter.ViewHolder>(CatalogDiffCallback()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -21,15 +22,22 @@ class CatalogAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = getItem(position)
 
-        holder.bind(item, onProductClick)
+        holder.bind(item, onProductClick, onFavoriteClick)
     }
 
     class ViewHolder(private val binding: CatalogItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(model: JeansModel, clickListener: (productId: Long) -> Unit) {
+        fun bind(
+            model: JeansModel,
+            detailClickListener: (productId: Long) -> Unit,
+            favoriteClickListener: (productId: Long) -> Unit
+        ) {
             binding.model = model
             binding.productImage.setOnClickListener {
-                clickListener(model.id)
+                detailClickListener(model.id)
+            }
+            binding.favoriteButton.setOnClickListener {
+                favoriteClickListener(model.id)
             }
         }
     }
