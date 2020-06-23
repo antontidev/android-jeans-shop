@@ -1,14 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.DetailFragment">
+    tools:context=".ui.DetailFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+<!--    <com.google.android.material.appbar.AppBarLayout-->
+<!--        android:layout_width=""-->
+<!--        android:layout_height="">-->
+<!--        <androidx.appcompat.widget.Toolbar-->
+<!--            android:layout_width=""-->
+<!--            android:layout_height=""/>-->
+<!--    </com.google.android.material.appbar.AppBarLayout>-->
+<!--    <TextView-->
+<!--        android:id="@+id/productName"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:text="@string/hello_blank_fragment" />-->
 
-</FrameLayout>
+<!--    <TextView-->
+<!--        android:id="@+id/productPrice"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"/>-->
+<!--    <Button-->
+<!--        android:id="@+id/cartButton"-->
+<!--        android:layout_width=""-->
+<!--        android:layout_height=""/>-->
+<!--    <CheckBox-->
+        android:id="@+id/favoriteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

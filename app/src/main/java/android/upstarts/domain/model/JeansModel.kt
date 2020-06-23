@@ -1,4 +1,4 @@
-package android.upstarts.domain
+package android.upstarts.domain.model
 
 data class JeansModel(
     var id: Long,

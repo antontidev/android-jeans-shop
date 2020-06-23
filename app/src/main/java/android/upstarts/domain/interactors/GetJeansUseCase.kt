@@ -1,4 +1,12 @@
 package android.upstarts.domain.interactors
 
-class GetJeansUseCase {
+import android.upstarts.domain.EndpointApi
+import android.upstarts.domain.model.JeansModel
+import javax.inject.Inject
+import kotlin.math.log
+
+class GetJeansUseCase @Inject constructor(
+    private val endpointApi: EndpointApi
+) {
+    suspend operator fun invoke() = endpointApi.getRemoteJeans()
 }

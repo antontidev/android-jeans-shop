@@ -1,6 +1,7 @@
-package android.upstarts.di
+package android.upstarts.di.components
 
 import android.content.Context
+import android.upstarts.di.modules.DatabaseModule
 import android.upstarts.di.modules.EndpointApiModule
 import android.upstarts.ui.CatalogFragment
 import android.upstarts.ui.DetailFragment
@@ -11,13 +12,16 @@ import javax.inject.Singleton
 
 @Component(
     modules = [
-        EndpointApiModule::class
+        EndpointApiModule::class,
+        DatabaseModule::class
     ]
 )
 @Singleton
 interface AppComponent {
     @Component.Builder
     interface Builder {
+        @BindsInstance
+        fun context(context: Context) : Builder
         fun build(): AppComponent
     }
 

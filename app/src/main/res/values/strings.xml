@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Upstarts test task</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="catalogFragmentName">Джинсы</string>
+    <string name="unitOfPrice">Р</string>
+    <string name="newLabelText">NEW</string>
+    <string name="favoriteButtonContentDescription">Favorite</string>
+    <string name="priceWithThousands">%1$s %2$s %3$s</string>
+    <string name="priceWithoutThousands">%1$s %2$s</string>
 </resources>
