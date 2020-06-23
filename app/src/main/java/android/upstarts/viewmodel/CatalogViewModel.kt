@@ -17,15 +17,14 @@ class CatalogViewModel @Inject constructor(
     val favorites: LiveData<List<FavoriteJeans>>
         get() = _favorites
 
-    private var _jeans: MutableLiveData<List<JeansModel>>
+    private var _jeans = MutableLiveData<List<JeansModel>>()
     val jeans: LiveData<List<JeansModel>>
         get() = _jeans
 
     init {
-        var allJeans: List<JeansModel> = listOf()
+
         launch {
-            allJeans = getJeansUseCase()
+            _jeans.value = getJeansUseCase()
         }
-        _jeans = MutableLiveData(allJeans)
     }
 }

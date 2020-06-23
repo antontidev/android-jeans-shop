@@ -20,6 +20,7 @@ class CatalogFragment : BaseFragment() {
     lateinit var catalogViewModel: CatalogViewModel
 
     lateinit var adapter: CatalogAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         App.appComponent.inject(this)
         super.onCreate(savedInstanceState)

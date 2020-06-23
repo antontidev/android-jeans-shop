@@ -17,6 +17,6 @@ interface JeansDatabaseDao {
     fun clear()
 
     @Query("SELECT * FROM jeans_favorite_table ORDER BY id DESC")
-    fun getAllFavorite(): MutableLiveData<List<FavoriteJeans>>
+    fun getAllFavorite(): LiveData<List<FavoriteJeans>>
 }
 

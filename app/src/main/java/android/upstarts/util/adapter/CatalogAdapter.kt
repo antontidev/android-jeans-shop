@@ -39,6 +39,7 @@ class CatalogAdapter(
             binding.favoriteButton.setOnClickListener {
                 favoriteClickListener(model.id)
             }
+            binding.executePendingBindings()
         }
     }
 
